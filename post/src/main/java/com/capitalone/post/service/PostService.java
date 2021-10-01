@@ -12,7 +12,7 @@ public class PostService {
 
 	public List<Post> getPostByUsers(int userId) {
 		List<Post> posts = new ArrayList<>();
-		Post post1 = new Post(1l, "Ravi1-title-1", "Ravi-description-1", 1l);
+		Post post1 = new Post(1l, "Ravi1-title-11", "Ravi-description-1", 1l);
 		Post post2 = new Post(1l, "Ravi1-title-1", "Ravi-description-1", 2l);
 
 		Post post3 = new Post(2l, "Raj-title-1", "Raj-description-1", 3l);
