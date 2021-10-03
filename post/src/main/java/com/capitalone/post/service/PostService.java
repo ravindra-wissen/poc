@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.capitalone.post.model.Post;
 
 @Service
-public class PostService {
+public class PostService { 
 
 	public List<Post> getPostByUsers(int userId) {
 		List<Post> posts = new ArrayList<>();
