@@ -18,8 +18,8 @@ public class PostService {
 		Post post3 = new Post(2l, "Raj-title-1", "Raj-description-1", 3l);
 		Post post4 = new Post(2l, "Raj-title-1", "Raj-description-1", 4l);
 
-		Post post5 = new Post(3l, "Pooja-title-1", "Pooja-description-1", 5l);
-		Post post6 = new Post(3l, "Pooja-title-1", "Pooja-description-1", 6l);
+		Post post5 = new Post(3l, "Puja-title-1", "Pooja-description-1", 5l);
+		Post post6 = new Post(3l, "Puja-title-1", "Pooja-description-1", 6l);
 
 		switch (userId) {
 		case 1:
