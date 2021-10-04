@@ -18,7 +18,7 @@ public class PostController {
 	@Autowired
 	private PostService userService;
 
-	@GetMapping("/posts/users/{userId}/posts") 
+	@GetMapping("/posts/users/{userId}/posts")
 	public ResponseEntity<List<Post>> getPostByUsers(@PathVariable Integer userId) {
 
 		List<Post> posts = userService.getPostByUsers(userId);
