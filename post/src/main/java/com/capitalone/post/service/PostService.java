@@ -12,8 +12,8 @@ public class PostService {
 
 	public List<Post> getPostByUsers(int userId) {
 		List<Post> posts = new ArrayList<>();
-		Post post1 = new Post(1l, "Rani1-title-11", "Ranii-description-1", 1l);
-		Post post2 = new Post(1l, "Rani1-title-1", "Rani-description-1", 2l);
+		Post post1 = new Post(1l, "Rajani-title-11", "Ranii-description-1", 1l);
+		Post post2 = new Post(1l, "Rajani-title-1", "Rani-description-1", 2l);
 
 		Post post3 = new Post(2l, "Raj-title-1", "Raj-description-1", 3l);
 		Post post4 = new Post(2l, "Raj-title-1", "Raj-description-1", 4l);
