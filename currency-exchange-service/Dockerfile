@@ -2,7 +2,8 @@
 # FROM openjdk:8-jdk-alpine
 
 # For Java 11, try this
-FROM adoptopenjdk/openjdk11:alpine-jre
+#FROM adoptopenjdk/openjdk11:alpine-jre
+FROM public.ecr.aws/y0l2y8e9/adoptopenjdk/openjdk11:latest
 
 WORKDIR /opt/app
 
