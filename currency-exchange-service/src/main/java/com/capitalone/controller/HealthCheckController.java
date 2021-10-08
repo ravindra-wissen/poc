@@ -12,7 +12,7 @@ import com.capitalone.model.Exchange;
 public class HealthCheckController {
 
 	@GetMapping("/health")
-	public ResponseEntity<Exchange> getHealthcheck(@PathVariable String from, @PathVariable String to) {
+	public ResponseEntity<Exchange> getHealthcheck() {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }
