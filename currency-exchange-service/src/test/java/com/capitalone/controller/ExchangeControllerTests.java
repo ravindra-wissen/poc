@@ -2,6 +2,9 @@ package com.capitalone.controller;
 
 import static org.mockito.Mockito.when;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,6 +36,33 @@ public class ExchangeControllerTests {
 		exchange = new Exchange();
 	}
 
+	@Test
+	public void getAllExchangeTest() {
+		when(exchangeService.getAllExchange()).thenReturn(Arrays.asList(exchange));
+		ResponseEntity<List<Exchange>> result = exchangeController.getAllExchange();
+		Assert.assertNotNull(result);
+	}
+	
+	@Test
+	public void createExchangeTest() {
+		when(exchangeService.createExchange(exchange)).thenReturn(exchange);
+		ResponseEntity<Exchange> result = exchangeController.createExchange(exchange);
+		Assert.assertNotNull(result);
+	}
+	
+	@Test
+	public void deleteExchangeTest() {
+		ResponseEntity<Exchange> result = exchangeController.deleteExchange(1l);
+		Assert.assertNotNull(result);
+	}
+	
+	@Test
+	public void updateExchangeTest() {
+		when(exchangeService.updateExchange(exchange)).thenReturn(exchange);
+		ResponseEntity<Exchange> result = exchangeController.updateExchange(exchange);
+		Assert.assertNotNull(result);
+	}
+	
 	@Test
 	public void getExchangeTest() {
 		when(exchangeService.getExchangeByFromAndTo("usd", "inr")).thenReturn(exchange);

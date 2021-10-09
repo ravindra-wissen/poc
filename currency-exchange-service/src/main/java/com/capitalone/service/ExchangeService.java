@@ -43,7 +43,7 @@ public class ExchangeService {
 
 	public Exchange updateExchange(Exchange exchange) {
 		Exchange exchangeDb = getExchangeByFromAndTo(exchange.getExchangeFrom(), exchange.getExchangeTo());
-		if(exchangeDb != null) {
+		if(exchangeDb != null && !exchangeDb.getExchangeId().equals(exchange.getExchangeId())) {
 			return exchangeDb;
 		}
 		exchangeDb = exchangeRepository.findById(exchange.getExchangeId()).orElse(null);
