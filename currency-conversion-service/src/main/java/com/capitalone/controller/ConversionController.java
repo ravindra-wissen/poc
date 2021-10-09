@@ -17,7 +17,7 @@ public class ConversionController {
 	private ConversionService conversionService;
 
 	@GetMapping("from/{from}/to/{to}/quantity/{quantity}")
-	public ResponseEntity<Exchange> getconversion(@PathVariable String from, @PathVariable String to,
+	public ResponseEntity<Exchange> getConversion(@PathVariable String from, @PathVariable String to,
 			@PathVariable Integer quantity) {
 
 		Exchange exchange = conversionService.getConversion(from, to, quantity);
