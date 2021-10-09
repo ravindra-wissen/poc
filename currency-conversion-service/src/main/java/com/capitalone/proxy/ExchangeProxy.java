@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.capitalone.model.Exchange;
 
-@FeignClient(name = "exchange")
+@FeignClient(name = "exchange/exchange")
 public interface ExchangeProxy {
 
 	@GetMapping("exchange/from/{from}/to/{to}")
