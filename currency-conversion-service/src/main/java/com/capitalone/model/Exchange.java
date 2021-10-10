@@ -4,7 +4,7 @@ public class Exchange {
 
 	private String exchangeFrom;
 	private String exchangeTo;
-	private Float rate;  
+	private Float rate;   
 	private Float totalCalculatedAmount;
 	
 	public String getExchangeFrom() {
