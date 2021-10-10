@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.capitalone.model.Exchange;
 
-@FeignClient(name = "exchange", url = "http://dev-s-ecsal-1w4btirszwj1l-2099585939.us-east-2.elb.amazonaws.com")
+@FeignClient(name = "exchange", url = "http://dev-s-ecsal-jor08gxbjy1c-1710585645.us-east-2.elb.amazonaws.com/")
 public interface ExchangeProxy {
 
 	@GetMapping("exchange/from/{from}/to/{to}")
