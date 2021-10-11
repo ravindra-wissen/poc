@@ -23,7 +23,7 @@ public class ConversionService {
 		map.put("from", from);
 		map.put("to", to);
 
-		RestTemplate t = new RestTemplate();
+		RestTemplate t = new RestTemplate(); 
 		ResponseEntity<Exchange> forEntity = t.getForEntity("http://dev-lb-22205762.us-east-2.elb.amazonaws.com//exchange/from/{from}/to/{to}", 
 				Exchange.class, map);
 		Exchange exchange = forEntity.getBody();
