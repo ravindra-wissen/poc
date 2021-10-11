@@ -21,7 +21,7 @@ public class ConversionController {
 			@PathVariable Integer quantity) {
 
 		Exchange exchange = conversionService.getConversion(from, to, quantity);
-		return new ResponseEntity<>(exchange, HttpStatus.OK);
+		return new ResponseEntity<>(exchange, HttpStatus.OK); 
 	}
 
 }
