@@ -1,5 +1,6 @@
 package com.capitalone.service;
 
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
@@ -13,6 +14,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.capitalone.dynamodb.service.ExchangeDynamodbService;
 import com.capitalone.model.Exchange;
 import com.capitalone.repository.ExchangeRepository;
 
@@ -21,6 +23,9 @@ public class ExchangeServiceTest {
 	@InjectMocks
 	private ExchangeService exchangeService;
 
+	@Mock
+	private ExchangeDynamodbService exchangeDynamodbService;
+	
 	@Mock
 	private ExchangeRepository exchangeRepository;
 
@@ -59,6 +64,8 @@ public class ExchangeServiceTest {
 	@Test
 	public void createExchangeTest() {
 		when(exchangeRepository.save(exchange)).thenReturn(exchange);
+		when(exchangeRepository.save(exchange)).thenReturn(exchange);
+		
 		Exchange result = exchangeService.createExchange(exchange);
 		Assert.assertNotNull(result);
 

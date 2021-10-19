@@ -43,6 +43,33 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-dynamodb -->
+		<dependency>
+		    <groupId>com.amazonaws</groupId>
+		    <artifactId>aws-java-sdk-dynamodb</artifactId>
+		    <version>1.12.85</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.derjust/spring-data-dynamodb -->
+		<!-- <dependency>
+		    <groupId>com.github.derjust</groupId>
+		    <artifactId>spring-data-dynamodb</artifactId>
+		    <version>5.1.0</version>
+		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/com.github.spring-data-dynamodb/spring-data-dynamodb -->
+		<dependency>
+		    <groupId>io.github.boostchicken</groupId>
+		    <artifactId>spring-data-dynamodb</artifactId>
+		    <version>5.2.5</version>
+		</dependency>
+				
+			<!-- https://mvnrepository.com/artifact/software.amazon.kinesis/amazon-kinesis-client -->
+		<dependency>
+		    <groupId>software.amazon.kinesis</groupId>
+		    <artifactId>amazon-kinesis-client</artifactId>
+		    <version>2.3.7</version>
+		</dependency>
+
+
 		<!-- <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>

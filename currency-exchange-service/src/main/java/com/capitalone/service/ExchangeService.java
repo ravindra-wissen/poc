@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.capitalone.dynamodb.service.ExchangeDynamodbService;
 import com.capitalone.model.Exchange;
 import com.capitalone.repository.ExchangeRepository;
 
@@ -13,6 +14,9 @@ public class ExchangeService {
 
 	@Autowired
 	private ExchangeRepository exchangeRepository;
+	
+	@Autowired
+	private ExchangeDynamodbService exchangeDynamodbService;
 	
 	public Exchange getExchangeByFromAndTo(String from, String to) {
 		return exchangeRepository.findByExchangeFromAndExchangeTo(from, to).orElse(null);
@@ -29,8 +33,11 @@ public class ExchangeService {
 		if (exchangeDb != null) {
 			return exchangeDb;
 		}
-
-		return exchangeRepository.save(exchange);
+		
+		Exchange savedExchange =  exchangeRepository.save(exchange);
+		exchangeDynamodbService.save(savedExchange);
+		
+		return savedExchange;
 	}
 
 	public void deleteExchange(Long exchangeId) {
@@ -53,6 +60,8 @@ public class ExchangeService {
 			exchangeDb.setRate(exchange.getRate());
 
 			exchangeDb = exchangeRepository.save(exchangeDb);
+			exchangeDynamodbService.save(exchangeDb);
+
 		}
 
 		return exchangeDb;
