@@ -16,6 +16,7 @@ import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.cloudwatch.CloudWatchAsyncClient;
 import software.amazon.awssdk.services.dynamodb.DynamoDbAsyncClient;
 import software.amazon.awssdk.services.kinesis.KinesisAsyncClient;
+import software.amazon.awssdk.services.sns.SnsClient;
 import software.amazon.kinesis.common.ConfigsBuilder;
 import software.amazon.kinesis.common.KinesisClientUtil;
 //import com.amazonaws.services.kinesis.AmazonKinesis;
@@ -54,17 +55,6 @@ public class DynamoDBConfig {
 
 	@Bean
 	public ConfigsBuilder getConfigBuilder() {
-//        logger.info("Getting client configucation");
-
-//        AwsCredentials awsCreds = AwsBasicCredentials.create(accessKey, secretKey);
-
-//        AwsCredentialsProvider awsCredential = StaticCredentialsProvider.create(awsCreds);
-
-//        Region region = Region.of(awsRegion);
-//
-//        KinesisAsyncClient kinesisClient = KinesisClientUtil.createKinesisAsyncClient(
-//                KinesisAsyncClient.builder().credentialsProvider(awsCredential).region(region));
-
 		Region region = Region.of("us-east-2");
         KinesisAsyncClient kinesisClient = KinesisClientUtil.createKinesisAsyncClient(
                 KinesisAsyncClient.builder().region(region));
@@ -79,5 +69,7 @@ public class DynamoDBConfig {
                 cloudWatchClient, UUID.randomUUID().toString(), new RecordProcessorFactory());
 
     }
+	
+	
 
 }

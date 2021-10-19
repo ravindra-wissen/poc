@@ -1,17 +1,11 @@
 package com.capitalone.kinesis.consumer.kinesis.processor;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.capitalone.dynamodb.model.Exchange;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.capitalone.sns.AmazonSnsService;
 
 import software.amazon.kinesis.exceptions.InvalidStateException;
 import software.amazon.kinesis.exceptions.ShutdownException;
@@ -51,21 +45,11 @@ public class RecordProcessor implements ShardRecordProcessor {
 
 				JSONObject obj = new JSONObject(originalData);
 				log.info(obj.toString());
-				
-//				ObjectMapper objectMapper = new ObjectMapper();
-//
-//				Exchange[] exchanges = objectMapper.readValue(originalData, Exchange[].class);
-//
-//				List<Exchange> trackDetails = new ArrayList<>();
-//
-//				for (Exchange exchange : exchanges) {
-//
-//					System.out.println(exchange);
-//				}
+				AmazonSnsService amazonSnsService = new AmazonSnsService();
+				amazonSnsService.sendEmail("This email is sent from the Amazon kinesis stream record processing.\n\n\n" + originalData);
 
 			} catch (Exception e) {
 				log.error("Error parsing record {}", e);
-//                System.exit(1);
 			}
 
 			try {
