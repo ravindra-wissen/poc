@@ -33,15 +33,15 @@ public class CurrencyExchangeServiceApplication implements CommandLineRunner {
 		 * The Scheduler is the entry point to the KCL. This instance is configured with
 		 * defaults provided by the ConfigsBuilder.
 		 */
-		Scheduler scheduler = new Scheduler(configsBuilder.checkpointConfig(), configsBuilder.coordinatorConfig(),
-				configsBuilder.leaseManagementConfig(), configsBuilder.lifecycleConfig(),
-				configsBuilder.metricsConfig(), configsBuilder.processorConfig(),
-				configsBuilder.retrievalConfig().maxListShardsRetryAttempts(5).initialPositionInStreamExtended(
-						InitialPositionInStreamExtended.newInitialPosition(InitialPositionInStream.TRIM_HORIZON)));
-
-		Thread schedulerThread = new Thread(scheduler);
-		schedulerThread.setDaemon(true);
-		schedulerThread.start();
+//		Scheduler scheduler = new Scheduler(configsBuilder.checkpointConfig(), configsBuilder.coordinatorConfig(),
+//				configsBuilder.leaseManagementConfig(), configsBuilder.lifecycleConfig(),
+//				configsBuilder.metricsConfig(), configsBuilder.processorConfig(),
+//				configsBuilder.retrievalConfig().maxListShardsRetryAttempts(5).initialPositionInStreamExtended(
+//						InitialPositionInStreamExtended.newInitialPosition(InitialPositionInStream.TRIM_HORIZON)));
+//
+//		Thread schedulerThread = new Thread(scheduler);
+//		schedulerThread.setDaemon(true);
+//		schedulerThread.start();
 
 	}
 
