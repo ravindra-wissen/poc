@@ -47,17 +47,16 @@ public class ExchangeIntegrationTest {
 	public void setup() throws Exception {
 		dynamoDBMapper = new DynamoDBMapper(amazonDynamoDB);
 
-		CreateTableRequest tableRequest = dynamoDBMapper.generateCreateTableRequest(Exchange.class);
-		tableRequest.setProvisionedThroughput(new ProvisionedThroughput(1L, 1L));
-//		tableRequest.setKeySchema(null);
-		List<String> tables = amazonDynamoDB.listTables().getTableNames();
-		if(!tables.isEmpty() && tables.contains("exchange")) {
-			amazonDynamoDB.deleteTable(new DeleteTableRequest("exchange"));
-			amazonDynamoDB.createTable(tableRequest);
-			
-		} else {
-			amazonDynamoDB.createTable(tableRequest);
-		}
+//		CreateTableRequest tableRequest = dynamoDBMapper.generateCreateTableRequest(Exchange.class);
+//		tableRequest.setProvisionedThroughput(new ProvisionedThroughput(1L, 1L));
+//		List<String> tables = amazonDynamoDB.listTables().getTableNames();
+//		if(!tables.isEmpty() && tables.contains("exchange")) {
+//			amazonDynamoDB.deleteTable(new DeleteTableRequest("exchange"));
+//			amazonDynamoDB.createTable(tableRequest);
+//			
+//		} else {
+//			amazonDynamoDB.createTable(tableRequest);
+//		}
 	}
 
 	@Test
