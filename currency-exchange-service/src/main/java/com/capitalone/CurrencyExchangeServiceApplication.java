@@ -41,7 +41,7 @@ public class CurrencyExchangeServiceApplication implements CommandLineRunner {
 //
 //		Thread schedulerThread = new Thread(scheduler);
 //		schedulerThread.setDaemon(true);
-//		schedulerThread.start();
+//		schedulerThread.start(); 
 
 	}
 
