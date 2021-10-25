@@ -168,12 +168,12 @@
     <repository>
         <id>central</id>
         <name>a0bbbvq6oq9uq-artifactory-primary-0-releases</name>
-        <url>https://capital1wissen.jfrog.io/artifactory/default-maven-local</url>
+        <url>https://capital1wissen.jfrog.io/artifactory/maven-local-repo</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
         <name>a0bbbvq6oq9uq-artifactory-primary-0-snapshots</name>
-        <url>https://capital1wissen.jfrog.io/artifactory/default-maven-local</url>
+        <url>https://capital1wissen.jfrog.io/artifactory/maven-local-repo</url>
     </snapshotRepository>
 </distributionManagement>
 
