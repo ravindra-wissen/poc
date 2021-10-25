@@ -31,7 +31,7 @@ public class DynamoDBConfig {
 
 	@Value("${aws.stream-name}")
 	private String streamName;
-	
+	 
 	@Value("${application.name}")
 	private String applicationName;
 	
