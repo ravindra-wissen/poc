@@ -17,7 +17,7 @@ import com.capitalone.model.Exchange;
 import com.capitalone.service.ExchangeService;
 
 @RestController
-public class ExchangeController {
+public class ExchangeController { 
 
 	@Autowired
 	private ExchangeService exchangeService;
